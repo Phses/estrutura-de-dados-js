@@ -19,5 +19,6 @@
     "nodemon": "^2.0.22",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
-  }
+  },
+  "dependencies": {}
 }
