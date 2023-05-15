@@ -25,8 +25,8 @@ describe('Confere valores', () => {
       sut.add(5);
       sut.add(6);
       sut.add(8);
-      const lastElement = sut.peek();
-      expect(lastElement).toEqual(8);
+      const element = sut.peek();
+      expect(element).toEqual(5);
     })
     test('Deve retornar o tamanho exato da fila', () => {
       const sut = makeSutString()

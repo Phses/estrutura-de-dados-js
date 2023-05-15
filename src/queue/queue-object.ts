@@ -11,7 +11,8 @@ class Queue<T> {
     }
 
     add(element: T) : void {
-        this.items[this.count] = element
+        this.items[this.count] = element;
+        this.count++;
     }
 
     remove() : T | undefined{
