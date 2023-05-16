@@ -1,5 +1,21 @@
 import Stack from "./stack/stack-object";
 import Queue from "./queue/queue-object";
+import Deque from "./queue/deque";
+
+const deque = new Deque<number>();
+console.log(deque.count);
+deque.addBack(4);
+console.log(deque.count);
+deque.addBack(3);
+console.log(deque.count);
+deque.addBack(2);
+console.log(deque.count);
+
+console.log(deque.toString());
+console.log(deque.count);
+console.log(deque.peekBack());
+console.log(Object.getOwnPropertyNames(deque));
+console.log(Object.keys(deque));
 
 const queue = new Queue<number>();
 
