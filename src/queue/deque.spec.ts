@@ -20,6 +20,13 @@ describe('Confere valores deque', () => {
         const isEmpty = sut.isEmpty();
         expect(isEmpty).toEqual(false);
     })
+    test('Deve retornar o elemento retirado', () => {
+      const sut = makeSutNumber()
+      sut.addBack(5);
+      sut.addBack(2);
+      const lastElement = sut.removeBack();
+      expect(lastElement).toEqual(2);
+  })
     test('Deve retornar o primeiro elemento do deque', () => {
       const sut = makeSutNumber()
       sut.addFront(5);

@@ -13,7 +13,8 @@ class Deque<T> {
         if(this.count == 0) {
             this.addBack(element);
         } else if(this.lowestCount > 0) {
-            this.items[this.lowestCount -1] = element;
+            this.lowestCount--;
+            this.items[this.lowestCount] = element;
         } else {
             for(let i = this.count; i >= this.lowestCount; i--) {
                 this.items[i + 1] = this.items[i]; 
@@ -39,8 +40,8 @@ class Deque<T> {
         if(this.isEmpty()) {
             return undefined;
         }
-        const result = this.items[this.count];
-        delete this.items[this.count];
+        const result = this.items[this.count -1];
+        delete this.items[this.count -1];
         this.count--;
         return result;
     }
@@ -57,7 +58,7 @@ class Deque<T> {
         return this.items[this.count -1];
     }
     isEmpty(): boolean {
-        return this.count - this.lowestCount == 0
+        return this.count - this.lowestCount === 0
     }
     clear(): void {
         this.items = {}
