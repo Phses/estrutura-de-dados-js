@@ -1,7 +1,6 @@
 import { defaultEquals } from "../util/default-equals";
 import { DoublyNode } from "./doubly-node";
 import LinkedList from "./linked-list";
-import { Node } from "./node";
 
 class DoublyLinkedList<T> extends LinkedList<T> {
     tail : DoublyNode<T> | undefined
@@ -10,11 +9,11 @@ class DoublyLinkedList<T> extends LinkedList<T> {
         this.tail = undefined;
     }
 
-    get head(): DoublyNode<T> | undefined {
+    get doublyHead(): DoublyNode<T> | undefined {
         return this.head as DoublyNode<T> | undefined;
-      }
+    }
     
-    set head(node: DoublyNode<T> | undefined) {
+    set doublyHead(node: DoublyNode<T> | undefined) {
         this.head = node;
     }
 
@@ -22,14 +21,14 @@ class DoublyLinkedList<T> extends LinkedList<T> {
         if(index >= 0 && index <= this.count) {
             const node = new DoublyNode(element);
             if(index === 0) {
-                if(this.head == null) {
-                    this.head = node;
+                if(this.doublyHead == null) {
+                    this.doublyHead = node;
                     this.tail = node;
                 } else {
-                    let current = this.head;
-                    this.head = node;
-                    this.head.next = current;
-                    current.prev = this.head;
+                    let current = this.doublyHead;
+                    this.doublyHead = node;
+                    this.doublyHead.next = current;
+                    current.prev = this.doublyHead;
                 }
             } else {
                 if(index === this.count) {
@@ -60,12 +59,12 @@ class DoublyLinkedList<T> extends LinkedList<T> {
         if(index >= 0 && index <= this.count) {
             let current = undefined;
             if(index === 0) {
-                current = this.head;
-                this.head = current?.next as DoublyNode<T>;
+                current = this.doublyHead;
+                this.doublyHead = current?.next as DoublyNode<T>;
                 if(this.count === 1) {
                     this.tail = undefined;
                 } else {
-                    this.head.prev = undefined;
+                    this.doublyHead.prev = undefined;
                 }
             } else if(index === this.count -1) {
                 current = this.tail;
