@@ -1,4 +1,3 @@
-import { Console } from "console";
 import Deque from "./deque";
 
 export function palindromeChecker(a : string, deque: Deque<string>) : boolean {
@@ -6,7 +5,6 @@ export function palindromeChecker(a : string, deque: Deque<string>) : boolean {
         return false;
     }
     let lowerCaseString = a.toLocaleLowerCase().split(' ').join('');
-    console.log(lowerCaseString);
     let isEqual = true;
     let firstLetter, lastLetter;
     for(let i = 0; i < lowerCaseString.length; i++) {
