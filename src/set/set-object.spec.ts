@@ -25,4 +25,31 @@ describe("Testes set", () => {
     const has = sut.has("Pedro");
     expect(has).toBe(true);
   })
+  test("Teste uniao", () => {
+    const sutA = makeSutNumber();
+    sutA.add(1);
+    sutA.add(2);
+    sutA.add(3);
+    const sutB = makeSutNumber();
+    sutB.add(3);
+    sutB.add(4);
+    sutB.add(5);
+    sutB.add(6);
+    const unionAB = sutA.union(sutB).values()
+    const expected = [1,2,3,4,5,6];
+    expect(unionAB).toEqual(expected)
+  })
+  test("Teste intersecao", () => {
+    const sutA = makeSutNumber();
+    sutA.add(1);
+    sutA.add(2);
+    sutA.add(3);
+    const sutB = makeSutNumber();
+    sutB.add(2);
+    sutB.add(3);
+    sutB.add(4);
+    const intersectionAB = sutA.intersection(sutB).values()
+    const expected = [2,3];
+    expect(intersectionAB).toEqual(expected)
+  })
 })

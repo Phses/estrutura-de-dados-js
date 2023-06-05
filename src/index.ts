@@ -3,6 +3,10 @@ import Queue from "./queue/queue-object";
 import Deque from "./queue/deque";
 import DoublyLinkedList from "./linked-list/doubly-linked-list";
 
+console.log('------------Set---------');
+
+
+
 console.log('--------Double Linked List--------------');
 const doublyLinkedList = new DoublyLinkedList<number>();
 
